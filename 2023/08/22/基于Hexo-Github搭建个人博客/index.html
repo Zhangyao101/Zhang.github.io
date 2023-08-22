@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport" />
+    <link rel="alternate icon" type="image/png" href="/img/favicon.png">
+    <title>Hexo | </title>
+    
+<link rel="stylesheet" href="/css/reset.css">
+
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    
+<link rel="stylesheet" href="/css/markdown.css">
+
+    
+<link rel="stylesheet" href="/css/fonts.css">
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+    <body>
+        <div class="paper">
+            <div class="paper-main">
+                
+                    <div class="post-header">
+    <a class="logo" href="/">Hexo</a>
+    <a class="go-home" href="/">
+        <svg width="8" height="14" viewBox="0 0 8 14">
+            <path d="M7 1L1 7l6 6" stroke="#000" stroke-width="2" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+    </a>
+</div>
+                
+                <div class="post-main">
+
+    
+    
+        <div class="post-main-title">
+            基于Hexo+Github搭建个人博客
+        </div>
+        <div class="post-meta">
+            2023-08-22
+        </div>
+        <div class="post-md">
+            <h5 id="准备工作："><a href="#准备工作：" class="headerlink" title="准备工作："></a>准备工作：</h5><ol>
+<li>nodejs：用来生成静态页面，下载电脑对应版本，<a href="nodejs.org">Nodejs官网</a>。</li>
+<li>git：安装git，将本地的hexo内容提交到github上去参考,<a target="_blank" rel="noopener" href="https://www.liaoxuefeng.com/wiki/896043488029600/896067074338496">安装git</a>。</li>
+<li>github：拥有一个自己的github账号。</li>
+</ol>
+<h5 id="安装Hexo："><a href="#安装Hexo：" class="headerlink" title="安装Hexo："></a>安装Hexo：</h5><pre><code class="bash">C:\Program Files\nodejs&gt;npm install -g hexo
+</code></pre>
+<h5 id="初始化："><a href="#初始化：" class="headerlink" title="初始化："></a>初始化：</h5><h6 id="PS：创建一个空的文件夹之后再执行命令初始化"><a href="#PS：创建一个空的文件夹之后再执行命令初始化" class="headerlink" title="PS：创建一个空的文件夹之后再执行命令初始化"></a>PS：创建一个空的文件夹之后再执行命令初始化</h6><pre><code class="bash">D:\blog&gt;hexo init
+D:\blog&gt; npm install
+added 1 package, and audited 238 packages in 3s
+27 packages are looking for funding
+run npm fund for details
+found 0 vulnerabilities
+D:\blog&gt;hexo s
+INFO  Validating config
+INFO  Start processing
+INFO  Hexo is running at http://localhost:4000/ . Press Ctrl+C to stop.
+</code></pre>
+<h5 id="尝试访问"><a href="#尝试访问" class="headerlink" title="尝试访问"></a>尝试访问</h5><p><img src="/%5Cimages%5Clocalhost.jpg"></p>
+<h5 id="开始关联Github："><a href="#开始关联Github：" class="headerlink" title="开始关联Github："></a>开始关联Github：</h5><h6 id="创建github仓库-固定格式：name-github-io"><a href="#创建github仓库-固定格式：name-github-io" class="headerlink" title="创建github仓库 (固定格式：name.github.io)"></a>创建github仓库 (固定格式：name.github.io)</h6><p><img src="/%5Cimages%5Cgithub.jpg"></p>
+<h6 id="添加git配置："><a href="#添加git配置：" class="headerlink" title="添加git配置："></a>添加git配置：</h6><pre><code class="bash">deploy:
+  type: git
+  repository: https://github.com/Zhangyao101/Zhangyao101.github.io.git
+  branch: master
+</code></pre>
+<h5 id="生成静态页面："><a href="#生成静态页面：" class="headerlink" title="生成静态页面："></a>生成静态页面：</h5><pre><code class="bash">hexo generate        或者：hexo g
+</code></pre>
+<h5 id="部署："><a href="#部署：" class="headerlink" title="部署："></a>部署：</h5><pre><code class="bash">hexo deploy            或者：hexo d
+PS:如果报错（ERROR Deployer not found: git）
+npm install hexo-deployer-git --save  #安装hexo-deployer-git即可
+</code></pre>
+<p><img src="/%5Cimages%5Chexo-zhangyao.jpg"></p>
+<h5 id="更换主题："><a href="#更换主题：" class="headerlink" title="更换主题："></a>更换主题：</h5><p><a target="_blank" rel="noopener" href="https://hexo.io/themes/">Hexo主题官网</a>,找到自己喜欢的主题，根据主题作者的Github主页配置即可。<br>obsidian为示例</p>
+<pre><code class="bahs">D:\blog&gt;git clone https://github.com/bennyxguo/hexo-theme-obsidian.git
+#将blog目录下_config.yml里theme的名称修改为自己想要的主题名称
+hexo clean           //清除缓存文件 (db.json) 和已生成的静态文件
+hexo g             //生成缓存和静态文件
+hexo d             //重新部署到服务器
+</code></pre>
+<h5 id="参考："><a href="#参考：" class="headerlink" title="参考："></a>参考：</h5><pre><code class="bash">https://www.cnblogs.com/MuYunyun/p/5927491.html#_label3
+</code></pre>
+
+        </div>
+
+    
+
+</div>
+                <div class="footer">
+    <span>Copyright © 2023</span>
+    <span>Blog Designed By <a target="_blank" href="https://zhangyao101.github.io">ZhangYao</a></span>
+</div>
+
+
+<link rel="stylesheet" href="/css/a11y-dark.min.css">
+
+
+<script src="/js/highlight.min.js"></script>
+
+
+<script src="/js/highlightjs-line-numbers.js"></script>
+
+
+<script>
+    hljs.initHighlightingOnLoad();
+    hljs.initLineNumbersOnLoad();
+</script>
+
+            </div>
+        </div>
+    </body>
+</html>
